@@ -1,0 +1,6 @@
+print 1 / 0;
+
+var x;
+print x;
+
+print "hello" + 5;
