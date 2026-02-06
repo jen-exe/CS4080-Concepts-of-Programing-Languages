@@ -16,6 +16,10 @@ Node* find(Node* l, const char* w) {
 void insert(Node** l, Node* a, const char* w) {
     Node* n = malloc(sizeof(Node));
     n->text = strdup(w);
+    if(!n->text){
+        free(n);
+        return;
+    }
 
     if (!a) {
         n->next = *l; n->prev = NULL;
@@ -33,7 +37,8 @@ void delete(Node** l, Node* x) {
     if (x == *l) *l = x->next;
     if (x->prev) x->prev->next = x->next;
     if (x->next) x->next->prev = x->prev;
-    free(x->text); free(x);
+    if(x->text) free(x->text);
+    free(x);
 }
 
 void dump(Node* l) {
@@ -55,4 +60,6 @@ int main() {
     delete(&list, find(list,"one"));
 
     dump(list);
+
+    
 }
