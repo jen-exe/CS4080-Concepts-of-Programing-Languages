@@ -1,0 +1,11 @@
+var i = 0;
+
+while (i < 10000) {
+  var a = "garbage";
+  var b = "collector";
+  var c = a + b;
+  i = i + 1;
+}
+
+print "done";
+

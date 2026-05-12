@@ -1,0 +1,12 @@
+class Box {}
+
+var b = Box();
+
+setField(b, "x", 123);
+print getField(b, "x");
+
+setField(b, "name", "robot");
+print getField(b, "name");
+
+print hasField(b, "x");
+print hasField(b, "missing");

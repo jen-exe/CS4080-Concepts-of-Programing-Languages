@@ -1,0 +1,8 @@
+class Box {}
+
+var b = Box();
+print hasField(b, "x");
+
+b.x = 123;
+print hasField(b, "x");
+

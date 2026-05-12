@@ -1,0 +1,13 @@
+class Box {}
+
+var b = Box();
+
+setField(b, "x", 123);
+
+print hasField(b, "x");
+
+print deleteField(b, "x");
+
+print hasField(b, "x");
+
+print deleteField(b, "missing");
